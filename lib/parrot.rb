@@ -8,7 +8,7 @@ module Parrot
 
   class Engine < Rails::Engine
     engine_name 'parrot'
-    isolate_namespace Parrot
+    # isolate_namespace Parrot # FIXME: tries application url helpers (undefined method `post_comments_path')
 
     initializer 'parrot' do |app|
       ActiveSupport.on_load(:active_record) do

@@ -3,4 +3,5 @@
 .bundle
 Gemfile.lock
 rdoc
+test/dummy/log*
 test/dummy/tmp

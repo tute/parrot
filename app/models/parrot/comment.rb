@@ -12,5 +12,9 @@ module Parrot
     def self.following(other_comment)
       where("created_at > '#{other_comment.created_at}'")
     end
+
+    def author
+      Parrot.author_class.find(author_id)
+    end
   end
 end
