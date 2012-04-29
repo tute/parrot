@@ -4,7 +4,7 @@ module Parrot
 
     module ClassMethods
       def parrot_comments
-        has_many :parrot_comments, :as => :comments
+        has_many :comments, :class_name => Parrot::Comment, :as => :commentable
       end
     end
   end

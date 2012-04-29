@@ -1,8 +1,13 @@
 require "parrot/version"
 
 module Parrot
+  mattr_accessor :author_class
+  def self.author_class
+    @@author_class.constantize
+  end
+
   class Engine < Rails::Engine
-    isolate_namespace(Parrot)
+    # isolate_namespace Parrot
 
     initializer 'parrot' do |app|
       ActiveSupport.on_load(:active_record) do

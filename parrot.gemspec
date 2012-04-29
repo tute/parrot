@@ -1,4 +1,5 @@
 $:.push File.expand_path("../lib", __FILE__)
+
 require "parrot/version"
 
 Gem::Specification.new do |s|
@@ -12,8 +13,8 @@ Gem::Specification.new do |s|
 
   s.files         = `git ls-files`.split("\n").reject{|f| f =~ /^\./ }
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.require_paths = ["lib"]
 
-  # s.add_dependency "rest-client"
-  # s.add_development_dependency "rspec"
+  s.add_dependency 'rails'
+  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'devise'
 end
