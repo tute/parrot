@@ -6,7 +6,7 @@
       <%= t('orders.show.you_wrote').html_safe %>:
       <%= button_to t('buttons.destroy'), [comment.commentable, comment], confirm: t('messages.are_you_sure'), method: :delete, class: 'btn btn-danger' %>
     <% else %>
-      <strong><%= comment.author %></strong> <%= t('orders.show.wrote') %>:
+      <strong><%= comment.author %></strong> <%= t('parrot.wrote') %>:
     <% end %>
   </h5>
   <p><%= comment.body %></p>

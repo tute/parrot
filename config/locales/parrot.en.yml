@@ -2,3 +2,7 @@ en:
   activerecord:
     models:
       comment: Comment
+  parrot:
+    new_comment: "New comment"
+    send_comment: "Send"
+    wrote: wrote

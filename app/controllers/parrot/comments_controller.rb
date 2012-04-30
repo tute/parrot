@@ -24,9 +24,8 @@ module Parrot
       respond_with @comment, :location => commentable
     end
 
-    # FIXME: Do ACL
     def destroy
-      @comment = Comment.find params[:id]
+      @comment = current_user.comments.find params[:id]
       @comment.destroy
       respond_with @comment, :location => commentable
     end

@@ -12,6 +12,10 @@
        resources :parrot_comments, controller: 'parrot/comments', path: 'comments'
      end
 
+6. Add commenting relation to your commenters:
+
+    has_many :comments, :class_name => Parrot::Comment, :foreign_key => :author_id
+
 # Notes
 
 * By default it calls to_s on commenter name. You may want to alias it to name
@@ -19,4 +23,5 @@
 
 # To-do
 
+* Flash responders working?
 * How to reopen parrot's subclasses from parent applications?
