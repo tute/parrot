@@ -1,1 +1,13 @@
-<p><strong><%= comment.author %></strong>: <%= comment.body %></p>
+<div id="c_<%= comment.id %>" class="comment">
+  <h5>
+    <%= t('date.formats.on') %>
+    <%= parse_date(comment.created_at, t('date.formats.datetime')) %>
+    <% if current_user.present? && current_user == comment.user %>
+      <%= t('orders.show.you_wrote').html_safe %>:
+      <%= button_to t('buttons.destroy'), comment, confirm: t('messages.are_you_sure'), method: :delete, class: 'btn info' %>
+    <% else %>
+      <strong><%= comment.author %></strong> <%= t('orders.show.wrote') %>:
+    <% end %>
+  </h5>
+  <p><%= comment.body %></p>
+</div>

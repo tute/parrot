@@ -1,0 +1,4 @@
+es:
+  activerecord:
+    models:
+      comment: Comentario
