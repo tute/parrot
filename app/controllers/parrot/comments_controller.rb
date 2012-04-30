@@ -24,6 +24,13 @@ module Parrot
       respond_with @comment, :location => commentable
     end
 
+    # FIXME: Do ACL
+    def destroy
+      @comment = Comment.find params[:id]
+      @comment.destroy
+      respond_with @comment, :location => commentable
+    end
+
     # Following methods should belong to ApplicationController
     def commentable_fk
       commentable_fk = params.select{|k,v| k =~ /_id/ }.keys.first

@@ -2,9 +2,9 @@
   <h5>
     <%= t('date.formats.on') %>
     <%= parse_date(comment.created_at, t('date.formats.datetime')) %>
-    <% if current_user.present? && current_user == comment.user %>
+    <% if current_user.present? && current_user == comment.author %>
       <%= t('orders.show.you_wrote').html_safe %>:
-      <%= button_to t('buttons.destroy'), comment, confirm: t('messages.are_you_sure'), method: :delete, class: 'btn info' %>
+      <%= button_to t('buttons.destroy'), [comment.commentable, comment], confirm: t('messages.are_you_sure'), method: :delete, class: 'btn btn-danger' %>
     <% else %>
       <strong><%= comment.author %></strong> <%= t('orders.show.wrote') %>:
     <% end %>

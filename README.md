@@ -16,3 +16,7 @@
 
 * By default it calls to_s on commenter name. You may want to alias it to name
   for example, so it doesn't show the Ruby "ugly" object.
+
+# To-do
+
+* How to reopen parrot's subclasses from parent applications?
