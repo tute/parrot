@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Tute Costa"]
   s.email       = "tutecosta@gmail.com"
   s.homepage    = "http://github.com/tute/parrot"
-  s.summary     = %q{Simple commenting solution for Rails 3 apps.}
+  s.summary     = %q{Simple commenting Rails Engine. Adds commentable behavior to any model easily.}
   s.description = %q{Add simple comments to any Rails resource.}
 
   s.files         = `git ls-files`.split("\n").reject{|f| f =~ /^\./ }
