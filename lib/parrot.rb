@@ -1,4 +1,4 @@
-require "parrot/version"
+require 'parrot/version'
 
 module Parrot
   mattr_accessor :author_class

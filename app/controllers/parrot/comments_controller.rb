@@ -9,8 +9,6 @@ module Parrot
 
     def new
       @comment = Comment.new
-      @comment.commentable_type = @commentable_type = commentable_type
-      @comment.commentable_id = commentable_id
       respond_with @comment
     end
 
@@ -40,11 +38,16 @@ module Parrot
     end
 
     def commentable_id
-      params[commentable_fk]
+      id = params[commentable_fk]
+      if id.to_i.to_s == id # Numeric id
+        id.to_i
+      else
+        commentable(id).id # Slugged (text, but we store integers)
+      end
     end
 
-    def commentable
-      commentable_type.classify.constantize.find(commentable_id)
+    def commentable(id = nil)
+      commentable_type.classify.constantize.find(id || commentable_id)
     end
 
     def debug(object)
