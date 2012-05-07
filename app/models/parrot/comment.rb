@@ -11,8 +11,15 @@ module Parrot
 
     validates_presence_of :commentable, :body, :author_id
 
+    def self.siblings_of(other_comment)
+      where(
+        commentable_type: other_comment.commentable_type,
+        commentable_id: other_comment.commentable_id
+      )
+    end
+
     def self.following(other_comment)
-      where("created_at > '#{other_comment.created_at}'")
+      siblings_of(other_comment).where("id > #{other_comment.id}")
     end
 
     def author
