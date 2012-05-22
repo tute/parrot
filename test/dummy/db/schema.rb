@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(:version => 20120429124205) do
 
   create_table "parrot_comments", :force => true do |t|
     t.integer  "author_id"
+    t.string   "author_name"
+    t.string   "author_email"
+    t.string   "author_phone"
     t.string   "commentable_type"
     t.integer  "commentable_id"
     t.text     "body"
