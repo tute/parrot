@@ -34,7 +34,11 @@ module Parrot
     end
 
     def commentable_type
-      commentable_fk.gsub('_id', '')
+      if params[:commentable_type].present?
+        params[:commentable_type]
+      else
+        commentable_fk.gsub('_id', '')
+      end
     end
 
     def commentable_id

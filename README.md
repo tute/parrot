@@ -34,6 +34,7 @@ Given <tt>@comment = Parrot::Comment.find(id)</tt>:
 
 # To-do
 
+* Show partial views examples for showing existing comments and comment form
 * Flash responders working?
 * Wiki: how to reopen parrot's subclasses from parent applications?
   (<tt>to_prepare</tt>).
