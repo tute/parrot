@@ -25,6 +25,7 @@ Given <tt>@comment = Parrot::Comment.find(id)</tt>:
 * The default "author" model is <tt>User</tt>. You may change it from
   <tt>config/initializers/parrot.rb</tt>. You can call
   <tt>@comment.author</tt> to get comment's author.
+* User model: `has_many :comments, class_name: Parrot::Comment, foreign_key: :author_id`
 * Parrot views calls <tt>to_s</tt> method on the comment's <tt>author</tt>.
   You may want to alias it, or the "ugly" Ruby object will be shown:
   <tt>alias_method :to_s, :name</tt>
@@ -38,3 +39,9 @@ Given <tt>@comment = Parrot::Comment.find(id)</tt>:
 * Flash responders working?
 * Wiki: how to reopen parrot's subclasses from parent applications?
   (<tt>to_prepare</tt>).
+
+----
+
+![Chef Surfing](https://chefsurfing.com/images/embed/logos/chef_surfing_header_logo_medium_red.png)
+
+parrot is maintained and funded by [Chef Surfing](https://chefsurfing.com/)

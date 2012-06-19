@@ -3,7 +3,7 @@ module Parrot
     respond_to :html
 
     def index
-      @comments = Comment.where(commentable_type: commentable_type.classify, commentable_id: commentable_id)
+      @comments = Comment.where(commentable_type: commentable_type, commentable_id: commentable_id)
       respond_with @comments
     end
 
@@ -14,7 +14,7 @@ module Parrot
 
     def create
       @comment = Comment.new(params[:parrot_comment])
-      @comment.commentable_type = commentable_type.classify
+      @comment.commentable_type = commentable_type
       @comment.commentable_id = commentable_id
       @comment.author_id = current_user.id
       @comment.save
@@ -25,8 +25,12 @@ module Parrot
     def destroy
       @comment = current_user.comments.find params[:id]
       @comment.destroy
+      params[:commentable_type] = @comment.commentable_type # Set commentable_type param (maybe namespaced for example)
       respond_with @comment, :location => after_comment_path(commentable, @comment)
     end
+
+
+    private
 
     # Following methods should belong to ApplicationController
     def commentable_fk
@@ -51,7 +55,7 @@ module Parrot
     end
 
     def commentable(id = nil)
-      commentable_type.classify.constantize.find(id || commentable_id)
+      commentable_type.constantize.find(id || commentable_id)
     end
 
     def after_comment_path(commentable, comment)
