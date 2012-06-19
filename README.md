@@ -42,6 +42,8 @@ Given <tt>@comment = Parrot::Comment.find(id)</tt>:
 
 ----
 
-![Chef Surfing](https://chefsurfing.com/images/embed/logos/chef_surfing_header_logo_medium_red.png)
+[![Chef Surfing](https://chefsurfing.com/images/embed/logos/chef_surfing_header_logo_medium_red.png)](https://chefsurfing.com/)
 
-parrot is maintained and funded by [Chef Surfing](https://chefsurfing.com/)
+parrot is maintained and funded by [Chef Surfing](https://chefsurfing.com/):
+"Find and hire great cooking talent in your city for a catered event, cooking
+class or weekly meal."
