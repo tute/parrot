@@ -41,7 +41,7 @@ module Parrot
       if params[:commentable_type].present?
         params[:commentable_type]
       else
-        commentable_fk.gsub('_id', '')
+        commentable_fk.gsub('_id', '').camelize
       end
     end
 
