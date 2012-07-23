@@ -17,9 +17,14 @@ module Parrot
       @comment.commentable_type = commentable_type
       @comment.commentable_id = commentable_id
       @comment.author_id = current_user.id
-      @comment.save
       @commentable_type = commentable_type
-      respond_with @comment, :location => after_comment_path(commentable, @comment)
+      if @comment.save
+        flash[:notice] = t('flash.actions.create.notice', resource_name: t('activerecord.models.comment'))
+        redirect_to after_comment_path(commentable, @comment)
+      else
+        flash[:notice] = t('flash.actions.create.alert', resource_name: t('activerecord.models.comment'))
+        redirect_to :back
+      end
     end
 
     def destroy
