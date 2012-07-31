@@ -20,7 +20,7 @@ module Parrot
       @commentable_type = commentable_type
       if @comment.save
         flash[:notice] = t('flash.actions.create.notice', resource_name: t('activerecord.models.comment'))
-        redirect_to after_comment_path(commentable, @comment)
+        redirect_to url_for(after_comment_path(commentable, @comment)) + '#comment_sent'
       else
         flash[:notice] = t('flash.actions.create.alert', resource_name: t('activerecord.models.comment'))
         redirect_to :back

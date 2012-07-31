@@ -18,6 +18,7 @@ module Parrot
       )
     end
 
+    # Bring follow up comments (may repeat +other_comment+'s  author)
     def self.following(other_comment)
       siblings_of(other_comment).where("id > #{other_comment.id}")
     end
