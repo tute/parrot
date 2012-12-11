@@ -35,6 +35,11 @@ Given <tt>@comment = Parrot::Comment.find(id)</tt>:
 
 # To-do
 
+* A `Parrot::Thread` intermediate object between commentable entries and actual
+  comments would abstract the FKs from the comments, would be the only tier
+  between parrot subsystem and host app, and would make (un)subscriptions dead
+  easy.
+* Not tested.
 * Show partial views examples for showing existing comments and comment form
 * Flash responders working?
 * Wiki: how to reopen parrot's subclasses from parent applications?
@@ -44,6 +49,4 @@ Given <tt>@comment = Parrot::Comment.find(id)</tt>:
 
 [![Chef Surfing](https://chefsurfing.com/images/embed/logos/chef_surfing_header_logo_medium_red.png)](https://chefsurfing.com/)
 
-parrot is maintained and funded by [Chef Surfing](https://chefsurfing.com/):
-"Find and hire great cooking talent in your city for a catered event, cooking
-class or weekly meal."
+parrot was funded by [Chef Surfing](https://chefsurfing.com/).
